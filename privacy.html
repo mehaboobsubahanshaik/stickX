@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>StickX privacy policy</title>
+<!-- Keep it in step with docs/privacy.md, which records what the code does. The StickX server serves
+     this same file at /privacy (backend/app/static/privacy.html, a copy checked by its tests). -->
+<style>
+  :root { color-scheme: light dark; --ink: #1f1b3a; --muted: #5d5882; --bg: #ffffff; --line: #e4e1f3; --brand: #5a4bd6; }
+  @media (prefers-color-scheme: dark) { :root { --ink: #ecebff; --muted: #b1adcf; --bg: #17152a; --line: #2e2a4a; --brand: #a99dff; } }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 system-ui, "Segoe UI", sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1 { font-size: 30px; margin: 0 0 4px; }
+  h2 { font-size: 20px; margin: 32px 0 8px; padding-top: 12px; border-top: 1px solid var(--line); }
+  .meta { color: var(--muted); margin: 0 0 24px; }
+  a { color: var(--brand); }
+  li { margin: 4px 0; }
+  table { border-collapse: collapse; width: 100%; margin: 8px 0; font-size: 15px; }
+  th, td { text-align: left; vertical-align: top; padding: 6px 8px; border-bottom: 1px solid var(--line); }
+</style>
+</head>
+<body>
+<main>
+<h1>StickX privacy policy</h1>
+<p class="meta">Last updated: 22 November 2026. StickX is a browser extension. This policy covers the extension and
+the StickX server at <a href="https://stickx-api.fly.dev/privacy">stickx-api.fly.dev</a>, run by Shaik Mehaboob Subahan.</p>
+
+<h2>In short</h2>
+<ul>
+  <li>Without a StickX account, nothing leaves your browser. The companion, your page marks, notes and
+    drawings stay on your device.</li>
+  <li>With an account, your StickX server keeps your email address, your settings and what you choose to
+    save. Nothing is sent until you act (sign in, save, use AI, speak a voice command).</li>
+  <li>AI requests and voice commands go to Groq, using your own Groq API key, only when you ask.</li>
+  <li>No ads, no analytics, no tracking, and we never sell your data.</li>
+</ul>
+
+<h2>Without an account</h2>
+<ul>
+  <li>Your settings and the companion's state (on or off, its place, your preferences) are kept in the
+    extension's storage in your browser.</li>
+  <li>Your marks on a page (ink, highlights, shapes, text labels, sticky notes, drawings) are kept in the
+    extension's own database on your device, with the page's address (without tracking parameters), its
+    title and its width, so they come back when you return. Websites cannot read them. You can switch this
+    off and delete everything from the toolbar popup. Nothing is kept in incognito windows.</li>
+  <li>To move its eyes and nap while you are away, the companion uses the cursor position and the time of
+    your last input on the page. These are used on the page only and never stored or sent.</li>
+  <li>Nothing is read from a page or sent anywhere unless you use a feature described below.</li>
+</ul>
+
+<h2>With a StickX account</h2>
+<p>An account is optional. When you have one, the StickX server keeps:</p>
+<table>
+  <tr><th>What</th><th>Details</th></tr>
+  <tr><td>Your account</td><td>Email address, an optional display name, and a hash of your password (never the password itself).</td></tr>
+  <tr><td>Your sessions</td><td>A keyed hash of each session's token (never the token), times, and your browser's user-agent string, so you can tell your devices apart. No IP addresses are stored.</td></tr>
+  <tr><td>Your settings</td><td>So they follow you between devices.</td></tr>
+  <tr><td>Your page marks</td><td>Only if you switch on "Sync page annotations" (off by default), with each page's address and title.</td></tr>
+  <tr><td>What you save</td><td>Selections, links, notes, AI answers and screenshots of an area you pick, with the page they came from; learning items you create (quizzes, flashcards, study notes, plans), your scores and review schedule.</td></tr>
+  <tr><td>Your Groq API key</td><td>If you add it: encrypted (AES-256-GCM), and readable only by the running server to make your AI requests. The extension never stores it.</td></tr>
+</table>
+<p>The server's logs record only the kind of request, its status and timing: never what you send, your
+email, tokens, keys or page addresses.</p>
+
+<h2>AI and voice</h2>
+<ul>
+  <li>AI works only with your own Groq API key and only when you pick an action (Explain, Summarize, a
+    question). Before anything is sent, StickX shows you what will go: your selection, the page's title and
+    address, the page's text if you add it, or descriptions of your marks. Text in form fields is never
+    sent.</li>
+  <li>Voice commands are push-to-talk only: StickX listens after you press Talk or Alt+Shift+V and stops
+    when you stop speaking (15 seconds at most). The recording goes to Groq to be turned into text.</li>
+  <li>Requests travel from your browser to your StickX server and on to Groq (<a href="https://groq.com/privacy-policy">Groq's privacy policy</a>).
+    The StickX server does not store or log prompts, page text, recordings or answers.</li>
+  <li>Usage and billing for your key are between you and Groq.</li>
+</ul>
+
+<h2>Screenshots</h2>
+<p>StickX takes a screenshot only when you sketch or save an area of a page, and only after you started it
+from Chrome (toolbar button, right-click menu or keyboard shortcut) on that tab. It hides itself for that
+moment and keeps only the area you picked. To sketch, the picture is used and dropped; to save, the
+cropped image is kept in your account.</p>
+
+<h2>Sharing</h2>
+<p>We do not sell, rent or share your data. The only other service that receives data is Groq, for the AI
+and voice requests you make. StickX's use of information it receives follows the
+<a href="https://developer.chrome.com/docs/webstore/program-policies/policies">Chrome Web Store User Data Policy</a>,
+including the Limited Use requirements.</p>
+
+<h2>Keeping and deleting</h2>
+<ul>
+  <li>Data on your device stays until you delete it (toolbar popup) or remove the extension.</li>
+  <li>In your account you can delete any saved item, your page marks, your Groq key or your settings at any
+    time. Deleting your account removes everything it holds at once.</li>
+  <li>Signing out deletes the session token from your browser and ends the session on the server.</li>
+</ul>
+
+<h2>Security</h2>
+<p>Passwords and tokens travel only over https (or to a server on your own computer). StickX's interface on
+a page is closed to the page's own scripts, so a website cannot read your notes or AI conversations.</p>
+
+<h2>Children</h2>
+<p>StickX is not directed at children under 13, and we do not knowingly collect their data.</p>
+
+<h2>Changes</h2>
+<p>If this policy changes, the new version is posted here with a new date, and changes in how StickX
+handles your data are announced in the extension before they apply.</p>
+
+<h2>Contact</h2>
+<p>Questions or requests about your data: <a href="mailto:shaikmehaboobsubahan@gmail.com">shaikmehaboobsubahan@gmail.com</a>.</p>
+</main>
+</body>
+</html>
